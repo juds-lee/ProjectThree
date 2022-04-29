@@ -5,9 +5,11 @@ import DisplayPokemon from './Components/DisplayPokemon';
 import UserForm from './Components/UserForm';
 
 function App() {
+// setting the pokemon
   const [pokemon, setPokemon] = useState([]);
-  const randomPokemonID = Math.ceil(Math.random() * 150);
+  const randomPokemonID = Math.ceil(Math.random() * 300);
 
+// api call
   function loadNewPokemon() {
       axios({
         url: `https://pokeapi.co/api/v2/pokemon/${randomPokemonID}`,
@@ -24,21 +26,14 @@ function App() {
   useEffect(() => {
     loadNewPokemon()
   },[])
-  // console.log(pokemon)
  
-  const submitAnswer = (e, pokeAnswer) => {
-    // e.preventDefault();
-    // const copyOfpoke = [...pokemon.name]
-    // if (submitAnswer == pokemon.name)
-    // console.log("yes!")
-    } 
-
   return (
      <div className='App'>
-      <h1>Pokedex</h1>
+       <h1>Who's that Pokemon!</h1>
       <DisplayPokemon pokemon={pokemon}/>
-      <UserForm pokemon={pokemon}/>
-      <button onClick={() => {loadNewPokemon()} }>New Pokemon</button>
+      <UserForm pokemon={pokemon} />
+    
+      <button onClick={() => {loadNewPokemon()}}>New Pokemon</button>
     </div>
   );
   }

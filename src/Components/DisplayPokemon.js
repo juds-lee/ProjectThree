@@ -1,5 +1,5 @@
 const DisplayPokemon = ({pokemon}) => {
-    <div>HELLO</div>
+
     if (!pokemon.sprites){
         return (<div>
             loading...
