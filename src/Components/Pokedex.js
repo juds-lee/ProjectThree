@@ -1,13 +1,10 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import firebaseConfig from '../Firebase/Firebase';
-import { getDatabase, ref, onValue, push, remove } from "firebase/database"
-
 
 const PokeDex = (props) => {
  // creating useEffect Bheaviour
-//  console.log(props.correctArr);
+ 
     return(
          <Popup 
     trigger={<button className="button"> Open Modal </button>}
@@ -20,8 +17,18 @@ const PokeDex = (props) => {
           &times;
         </button>
         <div className="header"> Pokedex </div>
-        <div className="content">
-         
+        <div className="pokedexContent">
+          {props.correctArr.map((pokemon) => {
+            return (
+              <div key={pokemon.id}>
+                  {pokemon.name}
+                    <img src={pokemon.sprites.front_default} alt={pokemon.name}/>
+                  
+              
+              
+              </div>
+            )
+          })}
         </div>
         <div className="actions">
           

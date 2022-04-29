@@ -8,6 +8,8 @@ function App() {
 // setting the pokemon
   const [pokemon, setPokemon] = useState([]);
   const randomPokemonID = Math.ceil(Math.random() * 300);
+  const [userInput, setUserInput] = useState('');
+  const [correctArr, setCorrectArr] = useState([]);
 
 // api call
   function loadNewPokemon() {
@@ -18,6 +20,8 @@ function App() {
       .then((response) => {
         // console.log(response.data.name)
         setPokemon(response.data)
+         console.log(response.data)
+        setUserInput('');
       })
       .catch(err => {
         console.log(err, "Something went wrong!")
@@ -29,9 +33,18 @@ function App() {
  
   return (
      <div className='App'>
-       <h1>Who's that Pokemon!</h1>
-      <DisplayPokemon pokemon={pokemon}/>
-      <UserForm pokemon={pokemon} />
+
+      <DisplayPokemon 
+      pokemon={pokemon}
+      />
+
+      <UserForm
+      pokemon={pokemon}
+      userInput={userInput} 
+      setUserInput={setUserInput} 
+      correctArr={correctArr} 
+      setCorrectArr={setCorrectArr} 
+      />
     
       <button onClick={() => {loadNewPokemon()}}>New Pokemon</button>
     </div>

@@ -9,7 +9,7 @@ const DisplayPokemon = ({pokemon}) => {
     return(
         <div>
             {pokemon.name}
-            <img src={pokemon.sprites.front_default} alt={pokemon.name}/>
+            <img className="guessPokemon" src={pokemon.sprites.other["official-artwork"].front_default} alt={pokemon.name}/>
 
         </div>
     )

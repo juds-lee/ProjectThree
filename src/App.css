@@ -74,3 +74,8 @@
   border-radius: 18px;
   border: 1px solid #cfcece;
 }
+
+.guessPokemon {
+  filter: brightness(5%);
+  width: 400px;
+}

@@ -1,27 +1,27 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import DisplayResults from "./DisplayResults";
 import PokeDex from "./Pokedex";
-import firebaseConfig from "../Firebase/Firebase";
 const UserForm = (props) => {
-
     const [text, setText] = useState("");
-    // const [trigger, setTrigger] = useState(null);
     let displayedPokemon = props.pokemon.name
-    const [userInput, setUserInput] = useState("")
-    // const [correctArr, setCorrectArr] = useState([]);
 
     const handleSubmit = (e) => {
         e.preventDefault()
-         setUserInput("")
-        setUserInput(text)
+        props.setUserInput("")
+        props.setUserInput(text)
+        if( text == displayedPokemon) {
+            props.setCorrectArr([props.pokemon, ...props.correctArr])
+            console.log(props.pokemon)
+        }
         setText("")
+        
+        
     }
 
     const handleUserInput = (e) => {
-        e.preventDefault();
          setText(e.target.value)        
     }
-    console.log(userInput)
+    // console.log(userInput)
     return(
     <section>
         <div className="submitGuess">
@@ -42,17 +42,19 @@ const UserForm = (props) => {
              <button type="submit">Submit</button>
            </form>
         </div>
-        <PokeDex userInput={userInput} displayedPokemon={displayedPokemon}/>
+        <PokeDex 
+        // userInput={props.userInput} 
+        // displayedPokemon={displayedPokemon} 
+        correctArr={props.correctArr}
+        />
         <DisplayResults 
-            userInput={userInput} 
+            userInput={props.userInput} 
             displayedPokemon={displayedPokemon} 
-            // setCorrectArr={setCorrectArr}
-            // correctArr={correctArr}
-            />
+        />
     </section>
        
     )
 } 
 
 
-export default UserForm; 
+export default UserForm;
