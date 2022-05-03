@@ -13,7 +13,6 @@ const DisplayPokemon = ({pokemon, isColor, hint}) => {
 
     } return(
         <div className="displayPokemon">
-            {pokemon.name}
             <img className={newClass} src={pokemon.sprites.other["official-artwork"].front_default} alt={pokemon.name}/>
         </div>
     )

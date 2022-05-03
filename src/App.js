@@ -8,7 +8,7 @@ import PokeDex from './Components/Pokedex';
 function App() {
 // setting the pokemon
   const [pokemon, setPokemon] = useState([]);
-  const randomPokemonID = Math.ceil(Math.random() * 156);
+  const randomPokemonID = Math.ceil(Math.random() * 300);
   const [userInput, setUserInput] = useState('');
   const [correctArr, setCorrectArr] = useState([]);
   const [correctAnswer, setCorrectAnswer] = useState();
@@ -16,10 +16,11 @@ function App() {
   const [hint, setHint] = useState(false);
   const [theme, setTheme] = useState("")
 
+  //  themes for the gameboy color
   const handleThemeSwitch = (color) => {
     setTheme(color)
   }
-
+  // function to retrieve Api 
   function loadNewPokemon() {
       axios({
         url: `https://pokeapi.co/api/v2/pokemon/${randomPokemonID}`,
@@ -123,7 +124,7 @@ function App() {
           </div>
         </div>
       </div>
-    </div>
+  </div>
   );
   }
 

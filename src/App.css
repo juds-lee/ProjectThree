@@ -14,7 +14,7 @@
   height: 500px;
   background-color: rgb(150, 195, 79);
   padding: 1rem 2rem;
-  max-width: 100%;
+  width: 600px;
   position: relative;
   overflow:scroll;
   display: flex;
@@ -33,19 +33,14 @@ h2 {
   padding: 1rem;
   flex-direction: row;
   width: 100%;
-
-
 }
 
 .pokemonContainer {
   display: flex;
-flex-wrap: wrap;
-  font-family: 'VT323',
-    monospace;
+  flex-wrap: wrap;
+  font-family: 'VT323', monospace;
   font-size: 1.2rem;
-    width: 100%;
-
-
+   width: 100%;
 }
 
 .pokemonSpritesBox {
@@ -116,9 +111,6 @@ button {
   height: 100vh;
   overflow:auto;
 }
-
-
-
 
 .pokemonApp {
   display: flex;
@@ -573,7 +565,12 @@ div#midCircle {
 
 
 /* Media Queries */
-
+@media (max-width: 985px) {
+  .modal {
+    height: 450px;
+    max-width: 600px;
+  }
+}
 @media (max-width: 880px) {
  h1{
    font-size: 40px;
@@ -703,32 +700,56 @@ div#midCircle {
     width: 3rem;
     height: 3rem;
   }
+  .modal {
+    height: 450px;
+    max-width: 400px;
+  }
 }
-  @media (max-width: 550px) {
+  @media (max-width: 570px) {
    .sidebar {
      display: none;
    }
   .flexContainerRow {
     width: 300px;
   }
+    .modal {
+    height: 400px;
+    width: 400px;
+    }
+    .pokedexHeader{
+      font-size: 1.5rem;
+    }
+    .pokedexP{
+      font-size: 1.3rem;
+    }
 }
-
-  @media (max-width: 430px) {
- 
-    .flexContainerRow {
-      width: 250px;
-    }
-    .submitButton {
-      font-size: 1rem;
-    }
-    .hint {
-      font-size: 1rem;
-    }
-  div#cross {
-  margin: 5rem 0 0 1rem;
+@media (max-width: 430px) {
+  .flexContainerRow {
+    width: 250px;
   }
-    .abButton {
-      gap: 1rem;
-    }
+
+  .submitButton {
+    font-size: 1rem;
+  }
+
+  .hint {
+    font-size: 1rem;
+  }
+
+  div#cross {
+    margin: 5rem 0 0 1rem;
+  }
+
+  .abButton {
+    gap: 1rem;
+  }
+
 
 }
+@media (max-width: 490px){
+  .modal {
+    height: 500px;
+    width: 290px;
+  }
+}
+ 
