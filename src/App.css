@@ -134,58 +134,6 @@ button {
   align-items: center;
 }
 
-.sidebar {
-  display: flex;
-  position: absolute;
-  top: 15rem;
-  right: 0;
-  flex-direction: column;
-  gap: .7rem;
-  background-color: #fff8f8;
-  width: 1..5rem;
-  padding: 1rem;
-  border: 3px solid black;
-  cursor: pointer;
-  border-radius: 1rem 0 0 1rem;;
-}
-.changeColor {
-  height: 2rem;
-  width: 2rem;
-  border-radius: 50%;
-  border: 3px solid black;
-  cursor: pointer;
-  transition:all .25s ease;
-}
-.changeColor:hover {
-  height: 3rem;
-  width: 3rem;
-}
-
-.yellowButton{
-  background-color: rgb(143, 79, 228);
-    cursor: pointer;
-}
-
-.redButton {
-  background-color: rgb(208, 50, 50);
-    cursor: pointer;
-}
-
-.pinkButton {
-    background-color: rgb(255, 110, 134);
-      cursor: pointer;
-}
-
-.greenButton {
-  background-color: rgb(75, 226, 75);
-    cursor: pointer;
-}
-
-.blueButton {
-  background-color: blue;
-    cursor: pointer;
-}
-
 h1 {
   font-size: 48rem;
   width: 100%;
@@ -240,9 +188,90 @@ img {
   gap: 1.5rem;
   box-shadow: -.5rem .5rem 0px 0px rgb(58, 55, 213);
   margin-top: 3rem;
-
 }
 
+.sidebar {
+  display: flex;
+  position: absolute;
+  top: 15rem;
+  right: 0;
+  flex-direction: column;
+  gap: .7rem;
+  background-color: #fff8f8;
+  width: 1..5rem;
+  padding: 1rem;
+  border: 3px solid black;
+  cursor: pointer;
+  border-radius: 1rem 0 0 1rem;
+}
+
+.changeColor {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  border: 3px solid black;
+  cursor: pointer;
+  transition: all .25s ease;
+}
+
+.changeColor:hover {
+  height: 3rem;
+  width: 3rem;
+}
+
+.purpleButton {
+  background-color: rgb(110, 24, 224);
+  cursor: pointer;
+}
+.purpleBg {
+  background-color: rgb(110, 24, 224);
+  cursor: pointer;
+  box-shadow: -.5rem .5rem 0px 0px rgb(110, 24, 224);
+}
+
+.redButton {
+  background-color: rgb(250, 66, 24);
+  cursor: pointer;
+}
+
+.redBg {
+  background-color: rgb(250, 66, 24);
+  cursor: pointer;
+  box-shadow: -.5rem .5rem 0px 0px rgb(250, 66, 24);
+}
+
+.pinkButton {
+  background-color: rgb(194, 58, 174);
+  cursor: pointer;
+}
+
+.pinkBg {
+  background-color: rgb(194, 58, 174);
+  cursor: pointer;
+  box-shadow: -.5rem .5rem 0px 0px rgb(194, 58, 174);
+}
+
+.greenButton {
+  background-color: rgb(30, 182, 32);
+  cursor: pointer;
+}
+
+.greenBg {
+  background-color:rgb(30, 182, 32);
+  cursor: pointer;
+  box-shadow: -.5rem .5rem 0px 0px rgb(30, 182, 32);
+}
+
+.blueButton {
+  background-color: rgb(58, 55, 213);
+  cursor: pointer;
+}
+
+.blueBg {
+  background-color: rgb(32, 25, 222);
+  cursor: pointer;
+  box-shadow: -.5rem .5rem 0px 0px rgb(58, 55, 213);
+}
 
 .submitButton {
   background-color: rgb(228, 16, 16);

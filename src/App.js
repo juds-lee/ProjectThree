@@ -14,6 +14,12 @@ function App() {
   const [correctAnswer, setCorrectAnswer] = useState();
   const [isColor, setIsColor] = useState(false);
   const [hint, setHint] = useState(false);
+  const [theme, setTheme] = useState("")
+
+
+  const handleThemeSwitch = (color) => {
+    setTheme(color)
+  }
 
   function loadNewPokemon() {
       axios({
@@ -37,11 +43,11 @@ function App() {
   return (
     <div className='App'>
        <div class="sidebar">
-        <button className='changeColor redButton'></button> 
-        <button className='changeColor  blueButton'></button> 
-        <button className='changeColor  pinkButton'></button> 
-        <button className='changeColor greenButton'></button> 
-        <button className='changeColor yellowButton'></button>
+        <button onClick={() => handleThemeSwitch("redBg")} className='changeColor redButton'></button> 
+        <button onClick={() => handleThemeSwitch("blueBg")} className='changeColor blueButton'></button> 
+        <button onClick={() => handleThemeSwitch("pinkBg")} className='changeColor pinkButton'></button> 
+        <button onClick={() => handleThemeSwitch("greenBg")}className='changeColor greenButton'></button> 
+        <button onClick={() => handleThemeSwitch("purpleBg")}className='changeColor purpleButton'></button>
       </div>
      <section className='head'>
         <h1>Gotta Catch' Em All</h1>
@@ -53,7 +59,7 @@ function App() {
     
       <div className="pokemonApp">
 
-        <div className='flexContainerRow'>
+        <div className={`flexContainerRow ${theme}`}>
           <div className='screen'>
             <DisplayPokemon  
             pokemon={pokemon}
