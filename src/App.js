@@ -8,14 +8,13 @@ import PokeDex from './Components/Pokedex';
 function App() {
 // setting the pokemon
   const [pokemon, setPokemon] = useState([]);
-  const randomPokemonID = Math.ceil(Math.random() * 387);
+  const randomPokemonID = Math.ceil(Math.random() * 156);
   const [userInput, setUserInput] = useState('');
   const [correctArr, setCorrectArr] = useState([]);
   const [correctAnswer, setCorrectAnswer] = useState();
   const [isColor, setIsColor] = useState(false);
   const [hint, setHint] = useState(false);
   const [theme, setTheme] = useState("")
-
 
   const handleThemeSwitch = (color) => {
     setTheme(color)
@@ -54,6 +53,7 @@ function App() {
     
           <PokeDex 
               correctArr={correctArr}
+              pokemon={pokemon}
           />
       </section>
     

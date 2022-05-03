@@ -1,39 +1,18 @@
-import TypewriterComponent from 'typewriter-effect';
+import React from 'react'
+import { Typewriter } from 'react-simple-typewriter'
 
 const DisplayResults = ({userInput, displayedPokemon} ) => { 
     if (!userInput) {
         return(
-           <TypewriterComponent
-            options={{
-            strings: ["Results..."],
-            autoStart: true,
-            loop: true,
-            pauseFor: 10000
-            
-            }}
-        />
+            <div>Results</div>
         )
     } else if (userInput && userInput === displayedPokemon){
         return(
-            <TypewriterComponent
-            options={{
-            strings: ["Correct!"],
-            autoStart: true,
-            loop: true,
-            pauseFor:3000
-            }}
-        />
+        <div>Correct!</div>
         )
     }else if (userInput && userInput !== displayedPokemon){
         return(
-            <TypewriterComponent
-            options={{
-            strings: ["Try Again..."],
-            autoStart: true,
-            loop: true,
-            pauseFor:3000
-            }}
-        />
+          <div>Try again</div>
         )
         
     }
