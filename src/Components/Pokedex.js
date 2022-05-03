@@ -1,9 +1,10 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 const PokeDex = (props) => {
- // creating useEffect Bheaviour
- 
+
     return(
   <Popup 
       trigger={<button className="button pokedex">  
@@ -14,7 +15,7 @@ const PokeDex = (props) => {
   >
     {close => (
       <div className="modal">
-        <button className="close" onClick={close}> &times; </button>
+        <button className="close" onClick={close}></button>
         <div className="header">
           <h2 class="pokedexHeader">Pokedex</h2>
         </div>
