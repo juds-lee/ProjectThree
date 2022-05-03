@@ -12,7 +12,7 @@ const UserForm = (props) => {
         props.setUserInput(text)
         if( text == displayedPokemon) {
             props.setCorrectArr([props.pokemon, ...props.correctArr])
-           props.setIsColor(!props.isColor)
+            props.setIsColor(!props.isColor)
         }
         setText("") 
     }
