@@ -1,24 +1,41 @@
-const DisplayResults = ({userInput, displayedPokemon} ) => {
+import TypewriterComponent from 'typewriter-effect';
 
+const DisplayResults = ({userInput, displayedPokemon} ) => { 
     if (!userInput) {
         return(
-            <div>nothing</div>
+           <TypewriterComponent
+            options={{
+            strings: ["Results..."],
+            autoStart: true,
+            loop: true,
+            pauseFor: 10000
+            
+            }}
+        />
         )
     } else if (userInput && userInput === displayedPokemon){
         return(
-            <div>
-                <p>Correct</p>
-            </div>
+            <TypewriterComponent
+            options={{
+            strings: ["Correct!"],
+            autoStart: true,
+            loop: true,
+            pauseFor:3000
+            }}
+        />
         )
     }else if (userInput && userInput !== displayedPokemon){
         return(
-            <div>tryagain</div>
+            <TypewriterComponent
+            options={{
+            strings: ["Try Again..."],
+            autoStart: true,
+            loop: true,
+            pauseFor:3000
+            }}
+        />
         )
         
-    }else {
-        return(
-            <div>empty</div>
-        )
     }
 }
 
