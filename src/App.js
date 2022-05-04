@@ -44,7 +44,7 @@ function App() {
   return (
     <div className='App'>
       {/* gameboy color options */}
-      <div class="sidebar">
+      <div className="sidebar">
         <button onClick={() => handleThemeSwitch("redBg")} className='changeColor redButton'></button> 
         <button onClick={() => handleThemeSwitch("blueBg")} className='changeColor blueButton'></button> 
         <button onClick={() => handleThemeSwitch("pinkBg")} className='changeColor pinkButton'></button> 

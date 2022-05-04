@@ -26,5 +26,4 @@ const PokemonCard = (props) => {
 //     }
 } 
 
-
 export default PokemonCard;

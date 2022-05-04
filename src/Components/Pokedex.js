@@ -40,7 +40,7 @@ const PokeDex = (props) => {
               <div className="modal">
                 <button className="close" onClick={close}></button>
                 <div className="header">
-                  <h2 class="pokedexHeader">Pokedex</h2>
+                  <h2 className="pokedexHeader">Pokedex</h2>
                 </div>
                 <div className="pokedexP">
                   <p>Here are the Pokemon you've caught!</p>
@@ -49,8 +49,8 @@ const PokeDex = (props) => {
                 <div className="pokedexContent">
                   {props.correctArr.map((pokemon) => {
                     return (
-                      <div className='pokemonContainer'>
-                        <div onClick={(e)=>{handlePokemonSprites()}} className='pokemonSpritesBox' key={pokemon.id}>
+                      <div className='pokemonContainer' key={pokemon.id}>
+                        <div onClick={(e)=>{handlePokemonSprites()}} className='pokemonSpritesBox' >
                             <img className='sprites' src={pokemon.sprites.front_default} alt={pokemon.name}/>
                             {pokemon.name}
                         </div>
