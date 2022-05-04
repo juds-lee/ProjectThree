@@ -1,7 +1,5 @@
 import { useState } from "react";
-import DisplayPokemon from "./DisplayPokemon";
 import DisplayResults from "./DisplayResults";
-import PokeDex from "./Pokedex";
 
 const UserForm = (props) => {
     const [text, setText] = useState("");

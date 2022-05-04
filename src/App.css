@@ -54,7 +54,10 @@ h2 {
   width: 6rem;
   height: 6rem;
 }
-
+.view {
+  background-color: #010101;
+  height: 400px;
+}
 .pokemonCard{
   background-color: red;
 }
