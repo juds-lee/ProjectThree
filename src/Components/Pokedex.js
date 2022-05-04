@@ -1,10 +1,29 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const PokeDex = (props) => {
+const [sprites, setSprites] = useState([]);
+   const handlePokemonSprites = (e) => {
+     axios({
+        url: `https://pokeapi.co/api/v2/pokemon/${props.pokemon.name}`,
+        method: "GET",
+      })
+      .then((response) => {
+       setSprites(response.data.abilities);
+       console.log(response.data.abilities)
+      })
+      .catch(err => {
+        console.log(err, "Something went wrong!")
+      });
+     
+     sprites.map((i) => {
+       console.log(i.ability.name)
+         }) 
 
+    }
+ 
     return(
   <Popup 
       trigger={<button className="button pokedex">  
@@ -27,7 +46,7 @@ const PokeDex = (props) => {
           {props.correctArr.map((pokemon) => {
             return (
               <div className='pokemonContainer'>
-                <div className='pokemonSpritesBox' key={pokemon.id}>
+                <div onClick={handlePokemonSprites} className='pokemonSpritesBox' key={pokemon.id}>
                     <img className='sprites' src={pokemon.sprites.front_default} alt={pokemon.name}/>
                      {pokemon.name}
                 </div>
