@@ -39,19 +39,21 @@ function App() {
   useEffect(() => {
     loadNewPokemon()
     },[])
+
   
   return (
     <div className='App'>
-       <div class="sidebar">
+      {/* gameboy color options */}
+      <div class="sidebar">
         <button onClick={() => handleThemeSwitch("redBg")} className='changeColor redButton'></button> 
         <button onClick={() => handleThemeSwitch("blueBg")} className='changeColor blueButton'></button> 
         <button onClick={() => handleThemeSwitch("pinkBg")} className='changeColor pinkButton'></button> 
-        <button onClick={() => handleThemeSwitch("greenBg")}className='changeColor greenButton'></button> 
-        <button onClick={() => handleThemeSwitch("purpleBg")}className='changeColor purpleButton'></button>
+        <button onClick={() => handleThemeSwitch("greenBg")} className='changeColor greenButton'></button> 
+        <button onClick={() => handleThemeSwitch("purpleBg")} className='changeColor purpleButton'></button>
       </div>
+    {/* header */}
      <section className='head'>
         <h1>Gotta Catch' Em All</h1>
-    
           <PokeDex 
               correctArr={correctArr}
               pokemon={pokemon}
@@ -59,8 +61,8 @@ function App() {
       </section>
     
       <div className="pokemonApp">
-
         <div className={`flexContainerRow ${theme}`}>
+          {/* display screen */}
           <div className='screen'>
             <DisplayPokemon  
             pokemon={pokemon}
@@ -72,6 +74,7 @@ function App() {
             setHint={setHint}
             />
         </div>
+        {/* right side of screen, form, results, new refresh button */}
         <div className='rightSide'>
               <UserForm
                 setPokemon={setPokemon}
@@ -98,8 +101,8 @@ function App() {
                 </div>
               </button>
               <div className="gameboyDesign">
-              {/* Gameboy D-pad art taken from @Bidji */}
                   <div id="cross" className='gameboyButtons'>  
+                   {/* Gameboy D-pad art taken from @Bidji */}
                       <div id="leftcross">
                         <div id="leftT"></div>
                       </div>
@@ -116,6 +119,7 @@ function App() {
                         <div id="downT"></div>
                       </div> 
                   </div>
+
                   <div className='abButton'>
                       <div className='aButton'>A</div>
                       <div className='bButton'>B</div>

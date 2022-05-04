@@ -1,9 +1,9 @@
-
 const DisplayPokemon = ({pokemon, isColor, hint}) => {
+    // conditional to render your results upon guess
     let newClass = "guessPokemon";
-        if (isColor || hint) {
-            newClass = null
-            }
+    if (isColor || hint) {
+        newClass = null
+        }
 
     if (!pokemon.sprites){
         return (<div className="displayPokemon">
@@ -13,11 +13,9 @@ const DisplayPokemon = ({pokemon, isColor, hint}) => {
 
     } return(
         <div className="displayPokemon">
-       {pokemon.name}
             <img className={newClass} src={pokemon.sprites.other["official-artwork"].front_default} alt={pokemon.name}/>
         </div>
     )
-   
 }
 export default DisplayPokemon;
 

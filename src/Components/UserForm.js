@@ -9,16 +9,19 @@ const UserForm = (props) => {
         props.setUserInput("")
         props.setUserInput(text)
         if( text == displayedPokemon) {
+            // create array to display in our pokedex
+            // toggle to colored ver on correct answer
             props.setCorrectArr([props.pokemon, ...props.correctArr])
             props.setIsColor(!props.isColor)
         }
         setText("") 
     }
-
+    // save text input to variable
     const handleUserInput = (e) => {
          setText(e.target.value)        
     }
 
+    // creating a hint variable and toggler
     const handleHint = (e) => {
          props.setHint(!props.hint) 
     }
