@@ -27,14 +27,14 @@ const PokeDex = (props) => {
 
   return(
       <div>
-        <div className={viewCard? "pokemonCard" : "dontDisplay" }>
+        {/* <div className={viewCard? "pokemonCard" : "dontDisplay" }>
           <PokemonCard 
           sprites={sprites}
           pokemon={props.pokemon}
           abilities={props.abilities}
           setAbilities={props.setAbilities}
           />
-        </div>
+        </div> */}
         <section>
           <Popup 
               trigger={

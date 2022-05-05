@@ -63,17 +63,17 @@ h2 {
   width: 6rem;
   height: 6rem;
 }
-.pokemonCard {
+/* .pokemonCard {
   position: absolute;
   top: 0;
   left: 0;
   background-color: white;
-}
+} */
 
 
-.dontDisplay {
+/* .dontDisplay {
   display: none;
-}
+} */
 
 
 .modal>.header {
@@ -183,9 +183,10 @@ h1 {
 
 .guessPokemon {
   filter: brightness(0%);
+  width: 250px;
 }
 
-img {
+.pokemonimg {
   width: 250px;
   max-width: 250px;
 }
@@ -585,9 +586,7 @@ div#midCircle {
 }
 
 .footer {
-  position:absolute;
-  bottom:0;
-  padding-bottom: 1rem ;
+ 
 }
 
 /* Media Queries */
@@ -596,19 +595,30 @@ div#midCircle {
     height: 450px;
     max-width: 600px;
   }
-  img {
-    width: 200px;
+  .guessPokemon {
+    filter: brightness(0%);
+    width: 250px;
   }
+  
+  .pokemonimg {
+    width: 250px;
+    max-width: 250px;
+  }
+  
 }
 
 @media (max-width: 900px) {
   .flexContainerRow {
     max-width: 600px;
   }
-
   .guessPokemon {
-    width: 200px;
-    max-width: 200px;
+    filter: brightness(0%);
+    width: 250px;
+  }
+  
+  .pokemonimg {
+    width: 250px;
+    max-width: 250px;
   }
 
   .answerText,
@@ -749,6 +759,7 @@ div#midCircle {
   }
 }
   @media (max-width: 570px) {
+
    .sidebar {
      display: none;
    }
@@ -805,6 +816,30 @@ div#midCircle {
     padding: 1rem 0;
     font-size: 25px;
   }
+  .guessPokemon {
+    filter: brightness(0%);
+    width: 200px;
+  }
+  .pokemonimg {
+    width: 200px;
+    max-width: 200px;
+  }
+}
 
-
+@media (max-width: 400px) {
+  .answerText,
+  .displayResults {
+    height: 1.5rem;
+    font-size: 1rem;
+  }
+  .pokeballImage {
+    height: 3rem;
+    width: 3rem;
+  }
+  .answerText{
+    width: 55%;
+  }
+  h1 {
+    font-size: 20px;
+  }
 }
