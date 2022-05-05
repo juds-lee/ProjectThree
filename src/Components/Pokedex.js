@@ -9,8 +9,6 @@ const PokeDex = (props) => {
   const [sprites, setSprites] = useState([]);
   const [viewCard, setViewCard] = useState([false]);
 
-
-
   function handlePokemonSprites() {
       axios({
         url: `https://pokeapi.co/api/v2/pokemon/${props.pokemon.name}`,
@@ -27,7 +25,6 @@ const PokeDex = (props) => {
   }
 
 
-
   return(
       <div>
         <div className={viewCard? "pokemonCard" : "dontDisplay" }>
@@ -36,7 +33,6 @@ const PokeDex = (props) => {
           pokemon={props.pokemon}
           abilities={props.abilities}
           setAbilities={props.setAbilities}
-
           />
         </div>
         <section>
