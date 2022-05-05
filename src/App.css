@@ -63,18 +63,17 @@ h2 {
   width: 6rem;
   height: 6rem;
 }
-/* .pokemonCard {
+.pokemonCard {
   position: absolute;
   top: 0;
   left: 0;
   background-color: white;
-} */
+}
 
 
-/* .dontDisplay {
+.dontDisplay {
   display: none;
-} */
-
+} 
 
 .modal>.header {
   width: 100%;
@@ -126,6 +125,7 @@ button {
   margin: 0 auto;
   background-color: #ffffff;
   align-items: center;
+  justify-content: space-between;
   background-image: url(/public/images/background.jpg);
   background-position: 3%;
   height: 100vh;
@@ -140,12 +140,12 @@ button {
 }
 
 .head {
-  background-color: rgb(125, 196, 275);
-  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   position: relative;
+  width: 100vw;
 }
 
 h1 {
@@ -583,10 +583,6 @@ div#midCircle {
 
 .bButton {
   margin-top: -2rem;
-}
-
-.footer {
- 
 }
 
 /* Media Queries */

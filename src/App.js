@@ -47,96 +47,98 @@ function App() {
   
   return (
     <div className='App'>
-      {/* gameboy color options */}
-      <div className="sidebar">
-        <button onClick={() => handleThemeSwitch("redBg")} className='changeColor redButton'></button> 
-        <button onClick={() => handleThemeSwitch("blueBg")} className='changeColor blueButton'></button> 
-        <button onClick={() => handleThemeSwitch("pinkBg")} className='changeColor pinkButton'></button> 
-        <button onClick={() => handleThemeSwitch("greenBg")} className='changeColor greenButton'></button> 
-        <button onClick={() => handleThemeSwitch("purpleBg")} className='changeColor purpleButton'></button>
-      </div>
-     
-      {/* header */}
-     <section className='head'>
-        <h1>Gotta Catch' Em All</h1>
-          <PokeDex 
-              correctArr={correctArr}
-              pokemon={pokemon}
-              abilitiesArr={abilitiesArr}
-              setAbilitiesArr={setAbilitiesArr}
-              abilities={abilities}
-              setAbilities={setAbilities}
-          />
-      </section>
-      
-      <div className="pokemonApp">
-        <div className={`flexContainerRow ${theme}`}>
-          {/* display screen */}
-          <div className='screen'>
-            <DisplayPokemon  
-            pokemon={pokemon}
-            correctAnswer={correctAnswer}
-            setCorrectAnswer={setCorrectAnswer}
-            isColor={isColor}
-            setIsColor={setIsColor}
-            hint={hint}
-            setHint={setHint}
-           
-            />
-        </div>
-        {/* right side of screen, form, results, new refresh button */}
-        <div className='rightSide'>
-              <UserForm
-                setPokemon={setPokemon}
+      <div className='appBody'>
+          {/* gameboy color options */}
+          <div className="sidebar">
+            <button onClick={() => handleThemeSwitch("redBg")} className='changeColor redButton'></button> 
+            <button onClick={() => handleThemeSwitch("blueBg")} className='changeColor blueButton'></button> 
+            <button onClick={() => handleThemeSwitch("pinkBg")} className='changeColor pinkButton'></button> 
+            <button onClick={() => handleThemeSwitch("greenBg")} className='changeColor greenButton'></button> 
+            <button onClick={() => handleThemeSwitch("purpleBg")} className='changeColor purpleButton'></button>
+          </div>
+        
+          {/* header */}
+        <section className='head'>
+            <h1>Gotta Catch' Em All</h1>
+              <PokeDex 
+                  correctArr={correctArr}
+                  pokemon={pokemon}
+                  abilitiesArr={abilitiesArr}
+                  setAbilitiesArr={setAbilitiesArr}
+                  abilities={abilities}
+                  setAbilities={setAbilities}
+              />
+          </section>
+          
+          <div className="pokemonApp">
+            <div className={`flexContainerRow ${theme}`}>
+              {/* display screen */}
+              <div className='screen'>
+                <DisplayPokemon  
                 pokemon={pokemon}
-                userInput={userInput} 
-                setUserInput={setUserInput} 
-                correctArr={correctArr} 
-                setCorrectArr={setCorrectArr} 
-                setIsColor={setIsColor}
+                correctAnswer={correctAnswer}
+                setCorrectAnswer={setCorrectAnswer}
                 isColor={isColor}
+                setIsColor={setIsColor}
                 hint={hint}
                 setHint={setHint}
-              />
-              <button 
-              className="loadNewPokemon"onClick={() => {loadNewPokemon()}}
-              > 
-                <img src="images/pokeball.png" 
-                alt="pokeball image" 
-                className='pokeballImage'
+              
                 />
-                <div 
-                className='newPokemonLabel'
-                > New Pokemon
-                </div>
-              </button>
-              <div className="gameboyDesign">
-                  <div id="cross" className='gameboyButtons'>  
-                   {/* Gameboy D-pad art taken from @Bidji */}
-                      <div id="leftcross">
-                        <div id="leftT"></div>
+            </div>
+            {/* right side of screen, form, results, new refresh button */}
+            <div className='rightSide'>
+                  <UserForm
+                    setPokemon={setPokemon}
+                    pokemon={pokemon}
+                    userInput={userInput} 
+                    setUserInput={setUserInput} 
+                    correctArr={correctArr} 
+                    setCorrectArr={setCorrectArr} 
+                    setIsColor={setIsColor}
+                    isColor={isColor}
+                    hint={hint}
+                    setHint={setHint}
+                  />
+                  <button 
+                  className="loadNewPokemon"onClick={() => {loadNewPokemon()}}
+                  > 
+                    <img src="images/pokeball.png" 
+                    alt="pokeball image" 
+                    className='pokeballImage'
+                    />
+                    <div 
+                    className='newPokemonLabel'
+                    > New Pokemon
+                    </div>
+                  </button>
+                  <div className="gameboyDesign">
+                      <div id="cross" className='gameboyButtons'>  
+                      {/* Gameboy D-pad art taken from @Bidji */}
+                          <div id="leftcross">
+                            <div id="leftT"></div>
+                          </div>
+                          <div id="topcross">
+                            <div id="upT"></div>
+                          </div>
+                          <div id="rightcross">
+                            <div id="rightT"></div>
+                          </div>
+                          <div id="midcross">
+                            <div id="midCircle"></div>
+                          </div>
+                          <div id="botcross">
+                            <div id="downT"></div>
+                          </div> 
                       </div>
-                      <div id="topcross">
-                        <div id="upT"></div>
-                      </div>
-                      <div id="rightcross">
-                        <div id="rightT"></div>
-                      </div>
-                      <div id="midcross">
-                        <div id="midCircle"></div>
-                      </div>
-                      <div id="botcross">
-                        <div id="downT"></div>
-                      </div> 
-                  </div>
 
-                  <div className='abButton'>
-                      <div className='aButton'>A</div>
-                      <div className='bButton'>B</div>
-                  </div>
+                      <div className='abButton'>
+                          <div className='aButton'>A</div>
+                          <div className='bButton'>B</div>
+                      </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
       </div>
       <Footer/>
   </div>

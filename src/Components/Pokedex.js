@@ -10,18 +10,18 @@ const PokeDex = (props) => {
   const [viewCard, setViewCard] = useState([false]);
 
   function handlePokemonSprites() {
-      axios({
-        url: `https://pokeapi.co/api/v2/pokemon/${props.pokemon.name}`,
-        method: "GET",
-      })
-      .then((response) => {
-       setSprites(response.data.abilities);
-      // console.log(sprites)
-       setViewCard(!viewCard);
-      })
-      .catch(err => {
-        console.log(err, "Something went wrong!")
-      });
+      // axios({
+      //   url: `https://pokeapi.co/api/v2/pokemon/${props.pokemon.name}`,
+      //   method: "GET",
+      // })
+      // .then((response) => {
+      //  setSprites(response.data.abilities);
+      // // console.log(sprites)
+      //  setViewCard(!viewCard);
+      // })
+      // .catch(err => {
+      //   console.log(err, "Something went wrong!")
+      // });
   }
 
 
