@@ -2,37 +2,53 @@ import React from 'react';
 import Popup from 'reactjs-popup';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import UserForm from './UserForm';
 import PokemonCard from './PokemonCard';
+
 
 const PokeDex = (props) => {
   const [sprites, setSprites] = useState([]);
-  function handlePokemonSprites (e) {
+  const [viewCard, setViewCard] = useState([false]);
+
+
+
+  function handlePokemonSprites() {
       axios({
         url: `https://pokeapi.co/api/v2/pokemon/${props.pokemon.name}`,
         method: "GET",
       })
       .then((response) => {
        setSprites(response.data.abilities);
+      // console.log(sprites)
+       setViewCard(!viewCard);
       })
       .catch(err => {
         console.log(err, "Something went wrong!")
       });
-      return(
-      sprites.map((i) => {
-         <div className="view">
-            {i}
-        </div>  
-        console.log(i.ability.name)
-        }) 
-      )
-    }
+  }
+
+
+
   return(
       <div>
+        <div className={viewCard? "pokemonCard" : "dontDisplay" }>
+          <PokemonCard 
+          sprites={sprites}
+          pokemon={props.pokemon}
+          abilities={props.abilities}
+          setAbilities={props.setAbilities}
+
+          />
+        </div>
         <section>
           <Popup 
-              trigger={<button className="button pokedex">  
-              <img src="/images/pokedex.jpeg" alt="" className='pokedexImg'/>
+              trigger={
+              <button 
+              className="button pokedex">  
+              <img 
+              src="/images/pokedex.jpeg" 
+              alt="image of a pokedex" 
+              className='pokedexImg'
+              />
               </button>}
               modal
               nested>
@@ -45,17 +61,22 @@ const PokeDex = (props) => {
                 <div className="pokedexP">
                   <p>Here are the Pokemon you've caught!</p>
                 </div>
-
                 <div className="pokedexContent">
                   {props.correctArr.map((pokemon) => {
                     return (
                       <div className='pokemonContainer' key={pokemon.id}>
-                        <div onClick={(e)=>{handlePokemonSprites()}} className='pokemonSpritesBox' >
-                            <img className='sprites' src={pokemon.sprites.front_default} alt={pokemon.name}/>
-                            {pokemon.name}
+                        <div 
+                        onClick={(e) => {handlePokemonSprites()}}
+                        className='pokemonSpritesBox' 
+                        >
+                        <img
+                        className='sprites' 
+                        src={pokemon.sprites.front_default} 
+                        alt={pokemon.name}
+                        />
+                        {pokemon.name}
                         </div>
                       </div>
-                  
                     )
                   })}
                 </div>
@@ -63,10 +84,7 @@ const PokeDex = (props) => {
             )}
           </Popup>
       </section>
-       <div>
 
-
-       </div>
     </div>
   )
  

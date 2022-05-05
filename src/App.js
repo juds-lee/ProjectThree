@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import DisplayPokemon from './Components/DisplayPokemon';
 import UserForm from './Components/UserForm';
 import PokeDex from './Components/Pokedex';
+import Footer from './Components/Footer';
+import PokemonCard from './Components/PokemonCard';
 
 function App() {
 // setting the pokemon
@@ -11,10 +13,12 @@ function App() {
   const randomPokemonID = Math.ceil(Math.random() * 300);
   const [userInput, setUserInput] = useState('');
   const [correctArr, setCorrectArr] = useState([]);
+  const [abilitiesArr, setAbilitiesArr] = useState([]);
   const [correctAnswer, setCorrectAnswer] = useState();
   const [isColor, setIsColor] = useState(false);
   const [hint, setHint] = useState(false);
   const [theme, setTheme] = useState("")
+  const [abilities, setAbilities] = useState([]);
 
   //  themes for the gameboy color
   const handleThemeSwitch = (color) => {
@@ -51,15 +55,20 @@ function App() {
         <button onClick={() => handleThemeSwitch("greenBg")} className='changeColor greenButton'></button> 
         <button onClick={() => handleThemeSwitch("purpleBg")} className='changeColor purpleButton'></button>
       </div>
-    {/* header */}
+     
+      {/* header */}
      <section className='head'>
         <h1>Gotta Catch' Em All</h1>
           <PokeDex 
               correctArr={correctArr}
               pokemon={pokemon}
+              abilitiesArr={abilitiesArr}
+              setAbilitiesArr={setAbilitiesArr}
+              abilities={abilities}
+              setAbilities={setAbilities}
           />
       </section>
-    
+      
       <div className="pokemonApp">
         <div className={`flexContainerRow ${theme}`}>
           {/* display screen */}
@@ -72,6 +81,7 @@ function App() {
             setIsColor={setIsColor}
             hint={hint}
             setHint={setHint}
+           
             />
         </div>
         {/* right side of screen, form, results, new refresh button */}
@@ -128,6 +138,7 @@ function App() {
           </div>
         </div>
       </div>
+      <Footer/>
   </div>
   );
   }
