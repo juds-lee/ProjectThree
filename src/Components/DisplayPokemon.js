@@ -6,14 +6,14 @@ const DisplayPokemon = ({pokemon, isColor, hint}) => {
         }
 
     if (!pokemon.sprites){
-        return (<div className="displayPokemon">
+        return (
+        <div className="displayPokemon">
             loading...
         </div>
         );
 
     } return(
         <div className="displayPokemon">
-          
             <img className={`pokemonimg ${newClass}`} src={pokemon.sprites.other["official-artwork"].front_default} alt={pokemon.name}/>
         </div>
     )

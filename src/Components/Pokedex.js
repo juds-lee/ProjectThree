@@ -1,8 +1,6 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import PokemonCard from './PokemonCard';
+import { useState } from 'react';
 
 
 const PokeDex = (props) => {
@@ -23,7 +21,6 @@ const PokeDex = (props) => {
       //   console.log(err, "Something went wrong!")
       // });
   }
-
 
   return(
       <div>
