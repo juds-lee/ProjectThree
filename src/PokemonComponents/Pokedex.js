@@ -1,7 +1,5 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
-import { useState } from 'react';
-
 
 const PokeDex = (props) => {
   function handlePokemonSprites() {
