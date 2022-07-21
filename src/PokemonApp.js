@@ -1,11 +1,10 @@
 import './App.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import DisplayPokemon from './Components/DisplayPokemon';
-import UserForm from './Components/UserForm';
-import PokeDex from './Components/Pokedex';
-import Footer from './Components/Footer';
-import PokemonCard from './Components/PokemonCard';
+import DisplayPokemon from './PokemonComponents/DisplayPokemon';
+import UserForm from './PokemonComponents/UserForm';
+import PokeDex from './PokemonComponents/Pokedex';
+import Footer from './PokemonComponents/Footer';
 
 function Main() {
 // setting the states
