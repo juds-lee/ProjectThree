@@ -11,7 +11,7 @@ const DisplayResults = ({userInput, displayedPokemon} ) => {
         )
     }else if (userInput && userInput !== displayedPokemon){
         return(
-          <div>Try again</div>
+          <div>Try Again</div>
         )
         
     }
