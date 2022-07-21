@@ -7,7 +7,7 @@ import PokeDex from './Components/Pokedex';
 import Footer from './Components/Footer';
 import PokemonCard from './Components/PokemonCard';
 
-function App() {
+function Main() {
 // setting the states
   const [pokemon, setPokemon] = useState([]);
   const randomPokemonID = Math.ceil(Math.random() * 300);
@@ -145,4 +145,4 @@ function App() {
   );
   }
 
-export default App;
+export default Main;
