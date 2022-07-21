@@ -5,6 +5,7 @@ import DisplayPokemon from './PokemonComponents/DisplayPokemon';
 import UserForm from './PokemonComponents/UserForm';
 import PokeDex from './PokemonComponents/Pokedex';
 import Footer from './PokemonComponents/Footer';
+import Dashboard from './AuthComponents/Dashboard';
 
 function Main() {
 // setting the states
@@ -67,6 +68,7 @@ function Main() {
                   abilities={abilities}
                   setAbilities={setAbilities}
               />
+              < Dashboard/>
           </section>
           
           <div className="pokemonApp">

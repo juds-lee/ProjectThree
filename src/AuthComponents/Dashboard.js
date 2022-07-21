@@ -20,7 +20,7 @@ const Dashboard = () => {
     return(
     <>
      <div className="w-100 text-center mt-2">
-       <Button variant="link" onClick={handleLogOut}>Log Out</Button> 
+       <button variant="link" onClick={handleLogOut}>Log Out</button> 
       </div>
     </>
     )
