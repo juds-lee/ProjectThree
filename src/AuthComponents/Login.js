@@ -44,6 +44,14 @@ const Login = () => {
           Sign In
         </button>
       </form>
+      <div>
+            <Link to="/forgotpassword">Forgot Password</Link>
+        </div>
+      <div>
+        Need an Account? <Link to="/signup">Sign Up</Link>
+      </div>
+   
+
     </div>
   )
 }

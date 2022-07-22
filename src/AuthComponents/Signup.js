@@ -5,6 +5,7 @@ import { UserAuth } from "../contexts/AuthContexts";
 const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [passwordConfirm, setPasswordConfirm] = useState('');
     const {createUser} = UserAuth();
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false);
@@ -12,6 +13,7 @@ const Signup = () => {
 
     async function handleSubmit(e){
        e.preventDefault()
+    
       try {
         setError("")
         setLoading(true)
@@ -25,33 +27,39 @@ const Signup = () => {
       }
    
       return (
-    <div className='max-w-[700px] mx-auto my-16 p-4'>
+    <div>
       <div>
-        <h1 className='text-2xl font-bold py-2'>Sign up for a free account</h1>
-        <p className='py-2'>
-          Already have an account yet?{' '}
+        <h1>Who's That Pokemon</h1>
+        <h2>Sign up for a free account</h2>
+        <p> Already have an account?{' '} 
           <Link to='/' className='underline'>
             Sign in.
           </Link>
         </p>
       </div>
       <form onSubmit={handleSubmit}>
-        <div className='flex flex-col py-2'>
-          <label className='py-2 font-medium'>Email Address</label>
+        <div>
+          <label>Email Address</label>
           <input
             onChange={(e) => setEmail(e.target.value)}
-            className='border p-3'
             type='email'
           />
         </div>
-        <div className='flex flex-col py-2'>
-          <label className='py-2 font-medium'>Password</label>
+        <div>
+          <label>Password</label>
           <input
             onChange={(e) => setPassword(e.target.value)}
-            className='border p-3'
             type='password'
           />
         </div>
+        {/* <div>
+          <label>Password Confirm</label>
+          <input
+            onChange={(e) => setPasswordConfirm(e.target.value)}
+            type='password'
+          />
+        </div> */}
+
         <button>
           Sign Up
         </button>

@@ -9,11 +9,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
+     
       <div >
         <Router>
           <AuthContextProvider>
             <Routes>
-              <Route path="/"
+             <Route path="/"
                 element={
                   <ProtectedRoute>
                     <PokemonApp />
@@ -26,7 +27,7 @@ function App() {
             </Routes>
           </AuthContextProvider>
         </Router>
-      </div>  
+      </div> 
   );
 }
 

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { useRef } from "react";
 import { UserAuth } from "../contexts/AuthContexts";
 import { Link } from "react-router-dom";
 
 const Forgotpassword = () => {
-    const emailRef = useRef();
+    const [email, setEmail] = useState('');
     const {resetPassword} = UserAuth();
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false);
@@ -17,10 +16,11 @@ const Forgotpassword = () => {
       setMessage("")
       setError("")
       setLoading(true)
-      await resetPassword(emailRef.current.value)
+      await resetPassword(email)
       setMessage("Check your inbox for further instructions")
-    }catch {
+    }catch(error) {
      setError("Failed to reset password")
+      console.log(error)
     }
      setLoading(false)
      }
@@ -29,21 +29,13 @@ const Forgotpassword = () => {
     <div>
       <h2>Reset Password</h2>
           {error && <div className="danger">{error}</div>}
-          <form onSubmit={handleSubmit}>
-            <input 
-            id="email"
-            type='email' 
-            ref={emailRef}
-            required
-            placeholder="Enter your email"
-            >
-            </input>
-
-            <button disabled={loading} className="w-100" type="submit">
-             Reset Password
-            </button>
-        </form>
-    
+         <form onSubmit={handleSubmit}>
+          <label >Email Address</label>
+          <input onChange={(e) => setEmail(e.target.value)} type='email' />
+        <button> 
+          Reset Password
+        </button>
+      </form>
       <div>
         Need an Account? <Link to="/signup">Sign Up</Link>
       </div>
