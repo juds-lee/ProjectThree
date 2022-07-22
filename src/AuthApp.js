@@ -3,29 +3,28 @@ import PokemonApp from "./PokemonApp";
 import Login from "./AuthComponents/Login"
 import Forgotpassword from "./AuthComponents/Forgotpassword";
 import React from "react";
-import PrivateRoute from "./AuthComponents/PrivateRoute";
-import { AuthProvider } from "./contexts/AuthContexts";
+import ProtectedRoute from './AuthComponents/PrivateRoute';
+import { AuthContextProvider } from "./contexts/AuthContexts";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 
 function App() {
   return (
       <div >
         <Router>
-          <AuthProvider>
+          <AuthContextProvider>
             <Routes>
               <Route path="/"
                 element={
-                  <PrivateRoute>
+                  <ProtectedRoute>
                     <PokemonApp />
-                  </PrivateRoute>
+                  </ProtectedRoute>
                 }
               ></Route>
               <Route path="/signup" element={<Signup/>} />
               <Route path="/login" element={<Login/>} />
               <Route path="/forgotpassword" element={<Forgotpassword/>} />
             </Routes>
-          </AuthProvider>
+          </AuthContextProvider>
         </Router>
       </div>  
   );

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useRef } from "react";
-import { useAuth } from "../contexts/AuthContexts";
+import { UserAuth } from "../contexts/AuthContexts";
 import { Link } from "react-router-dom";
 
 const Forgotpassword = () => {
     const emailRef = useRef();
-    const {resetPassword} = useAuth();
+    const {resetPassword} = UserAuth();
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState("");
