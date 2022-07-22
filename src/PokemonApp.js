@@ -60,6 +60,7 @@ function Main() {
           {/* header */}
         <section className='head'>
             <h1>Gotta Catch' Em All</h1>
+            < Dashboard/>
               <PokeDex 
                   correctArr={correctArr}
                   pokemon={pokemon}
@@ -68,7 +69,7 @@ function Main() {
                   abilities={abilities}
                   setAbilities={setAbilities}
               />
-              < Dashboard/>
+              
           </section>
           
           <div className="pokemonApp">
