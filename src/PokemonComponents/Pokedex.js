@@ -23,12 +23,12 @@ const PokeDex = (props) => {
       }
       setPokemonInfo(pokemonArray);
     })
-    console.log(pokemonInfo)
   }
-  
+
 
   return(
       <div>
+       
         <section>
           <Popup 
               trigger={
@@ -54,18 +54,22 @@ const PokeDex = (props) => {
                   <p>Here are the Pokemon you've caught!</p>
                 </div>
                 <div className="pokedexContent">
-                  {props.correctArr.map((pokemon) => {
+                 
+                  {pokemonInfo.map((i) => {
+                    console.log(pokemonInfo)
                     return (
-                      <div className='pokemonContainer' key={pokemon.id}>
-                        <div 
+                      <div 
+                      className='pokemonContainer' key={i.id}
+                      >
+                     <div 
                         className='pokemonSpritesBox' 
                         >
                         <img
                         className='sprites' 
-                        src={pokemon.sprites.front_default} 
-                        alt={pokemon.name}
+                        src={i.pokemon.pokemon.sprites.front_default} 
+                        alt={i.pokemon.pokemon.name}
                         />
-                        {pokemon.name}
+                        {i.pokemon.pokemon.name}
                         </div>
                       </div>
                     )
