@@ -32,7 +32,7 @@ const Signup = () => {
         <h1>Who's That Pokemon</h1>
         <h2>Sign up for a free account</h2>
         <p> Already have an account?{' '} 
-          <Link to='/' className='underline'>
+          <Link to='/'>
             Sign in.
           </Link>
         </p>

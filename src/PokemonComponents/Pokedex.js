@@ -56,7 +56,6 @@ const PokeDex = (props) => {
                 <div className="pokedexContent">
                  
                   {pokemonInfo.map((i) => {
-                    console.log(pokemonInfo)
                     return (
                       <div 
                       className='pokemonContainer' key={i.id}

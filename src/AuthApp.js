@@ -6,19 +6,19 @@ import React from "react";
 import ProtectedRoute from './AuthComponents/PrivateRoute';
 import { AuthContextProvider } from "./contexts/AuthContexts";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import PrivateRoute from "./AuthComponents/PrivateRoute";
 
 function App() {
-  return (
-     
+  return ( 
       <div >
         <Router>
           <AuthContextProvider>
             <Routes>
              <Route path="/"
                 element={
-                  <ProtectedRoute>
+                  <PrivateRoute>
                     <PokemonApp />
-                  </ProtectedRoute>
+                  </PrivateRoute>
                 }
               ></Route>
               <Route path="/signup" element={<Signup/>} />

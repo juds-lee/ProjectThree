@@ -19,10 +19,10 @@ const UserForm = ({ pokemon, userInput, setUserInput, correctArr, setCorrectArr,
             // toggle to colored ver on correct answer
             setCorrectArr([pokemon, ...correctArr])
             setIsColor(!isColor)
-            // if (pokemon.name == text){
-            //     doubles = true;
-            // }
-            // console.log(text)
+            if (pokemon.name == text){
+                return;
+            }
+            console.log(text)
             const database = getDatabase(app);
             const newPokemonKey = push(child(ref(database), `users/${user?.uid}/pokemon`)).key;
             set(ref(database, `users/${user?.uid}/${newPokemonKey}`), {pokemon});
