@@ -1,18 +1,31 @@
 import { useState } from "react";
 import DisplayResults from "./DisplayResults";
+import { UserAuth } from "../contexts/AuthContexts";
+import { getDatabase, ref, push, set, child } from 'firebase/database';
+import app from "../firebase";
 
-const UserForm = (props) => {
+const UserForm = ({ pokemon, userInput, setUserInput, correctArr, setCorrectArr, setIsColor, isColor, setHint, hint}) => {
+    const {user} = UserAuth();
+    //let doubles = false;
     const [text, setText] = useState("");
-    let displayedPokemon = props.pokemon.name
+    let displayedPokemon = pokemon.name
+    
     const handleSubmit = (e) => {
         e.preventDefault()
-        props.setUserInput("")
-        props.setUserInput(text)
+        setUserInput("")
+        setUserInput(text)
         if( text == displayedPokemon) {
             // create array to display in our pokedex
             // toggle to colored ver on correct answer
-            props.setCorrectArr([props.pokemon, ...props.correctArr])
-            props.setIsColor(!props.isColor)
+            setCorrectArr([pokemon, ...correctArr])
+            setIsColor(!isColor)
+            // if (pokemon.name == text){
+            //     doubles = true;
+            // }
+            // console.log(text)
+            const database = getDatabase(app);
+            const newPokemonKey = push(child(ref(database), `users/${user?.uid}/pokemon`)).key;
+            set(ref(database, `users/${user?.uid}/${newPokemonKey}`), {pokemon});
         }
         setText("") 
     }
@@ -23,7 +36,7 @@ const UserForm = (props) => {
 
     // creating a hint variable and toggler
     const handleHint = (e) => {
-         props.setHint(!props.hint) 
+         setHint(!hint) 
     }
  
     return(
@@ -49,14 +62,14 @@ const UserForm = (props) => {
             <div className="resultsBar">
                 <div className="displayResults">
                     <DisplayResults 
-                        pokemon={props.pokemon}
-                        userInput={props.userInput} 
-                        correctArr={props.correctArr}
+                        pokemon={pokemon}
+                        userInput={userInput} 
+                        correctArr={correctArr}
                         displayedPokemon={displayedPokemon} 
-                        setIsColor={props.setIsColor}
-                        isColor={props.isColor}
-                        hint={props.hint}
-                        setHint={props.setHint}
+                        setIsColor={setIsColor}
+                        isColor={isColor}
+                        hint={hint}
+                        setHint={setHint}
                     />
                 </div>
                 <div className="hintButton">
