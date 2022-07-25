@@ -25,7 +25,6 @@ const PokeDex = (props) => {
     })
   }
 
-
   return(
       <div>
        

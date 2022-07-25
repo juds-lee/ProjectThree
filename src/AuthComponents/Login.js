@@ -31,13 +31,14 @@ const Login = () => {
    <div className='directory'>
     <div className="form">
         <h2>Log In</h2>
+        {error && <div className='failed'>{error}</div>}
       <form onSubmit={handleSubmit}>
           <input onChange={(e) => setEmail(e.target.value)} type='email'
            placeholder="Enter your email" />
           <input onChange={(e) => setPassword(e.target.value)}  type='password'
            placeholder="Enter your password" />
         <button className="formButton">
-          Sign In
+          Log In
         </button>
       </form>
       <div className="directoryButton">

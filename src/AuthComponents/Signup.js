@@ -14,8 +14,9 @@ const Signup = () => {
 
     async function handleSubmit(e){
        e.preventDefault()
-    
-      try {
+       if (password!== passwordConfirm) {
+        return setError("Passwords do not match")
+      } try {
         setError("")
         setLoading(true)
         await createUser(email, password)
@@ -31,6 +32,7 @@ const Signup = () => {
     <div className='directory'>
       <div className="form">
         <h2>Sign up for an account</h2>
+        {error && <div className='failed'>{error}</div>}
       <form onSubmit={handleSubmit}>
           <input
             onChange={(e) => setEmail(e.target.value)}
@@ -44,13 +46,13 @@ const Signup = () => {
             type='password'
             placeholder="Enter your password"
           />
-        {/* <div>
-          <label>Password Confirm</label>
+        
           <input
             onChange={(e) => setPasswordConfirm(e.target.value)}
             type='password'
+             placeholder="Confirm your password"
           />
-        </div> */}
+    
         <button className="formButton">
           Sign Up
         </button>

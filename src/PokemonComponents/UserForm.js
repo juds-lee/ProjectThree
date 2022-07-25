@@ -19,10 +19,7 @@ const UserForm = ({ pokemon, userInput, setUserInput, correctArr, setCorrectArr,
             // toggle to colored ver on correct answer
             setCorrectArr([pokemon, ...correctArr])
             setIsColor(!isColor)
-            // if (pokemon.name == text){
-            //     return;
-            // }
-            console.log(text)
+            
             const database = getDatabase(app);
             const newPokemonKey = push(child(ref(database), `users/${user?.uid}/pokemon`)).key;
             set(ref(database, `users/${user?.uid}/${newPokemonKey}`), {pokemon});
@@ -76,8 +73,6 @@ const UserForm = ({ pokemon, userInput, setUserInput, correctArr, setCorrectArr,
                     <button onClick={(e)=>{handleHint(e)}}className="hint">HINT</button>
                 </div>
             </div>
-            
-        
     </section>
        
     )

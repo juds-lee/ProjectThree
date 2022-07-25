@@ -29,7 +29,8 @@ const Forgotpassword = () => {
     <div className='directory'>
       <div className="form">
       <h2>Reset Password</h2>
-          {error && <div className="danger">{error}</div>}
+          {error && <div className="failed">{error}</div>}
+          {message && <div className="success">{message}</div>}
          <form onSubmit={handleSubmit}>
           <input onChange={(e) => setEmail(e.target.value)} type='email'
           placeholder="Enter your email" />
@@ -40,7 +41,6 @@ const Forgotpassword = () => {
         <div className="white">
           Need an Account? <Link className="password" to="/signup">Sign Up</Link>
         </div>
-
       </div>
     </div>
   )
