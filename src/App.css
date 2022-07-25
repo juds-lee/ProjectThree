@@ -150,7 +150,7 @@ button {
 
 h1 {
   font-size: 48rem;
-  width: 100%;
+  width: 75%;
   font-family: 'Joti One',
     sans-serif;
   color: #FFCB04;
@@ -585,6 +585,7 @@ div#midCircle {
   margin-top: -2rem;
 }
 
+
 /* Media Queries */
 @media (max-width: 985px) {
   .modal {
@@ -622,10 +623,17 @@ div#midCircle {
     height: 2rem;
   }
 
+  .submitGuess{
+    width: 110%;
+  }
+
   .submitButton {
     font-size: 1.2rem;
   }
 
+  .gameboyDesign {
+    margin-top: 2.5rem;
+  }
   div#cross {
     width: 90px;
     height: 90px;
@@ -697,6 +705,9 @@ div#midCircle {
     align-items: flex-start;
     justify-content: flex-start;
   }
+    .gameboyDesign {
+      margin-top: 0;
+    }
 
   div#cross {
     top: -2.5rem;

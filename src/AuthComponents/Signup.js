@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../contexts/AuthContexts";
+import './formstyling.css';
 
 const Signup = () => {
     const [email, setEmail] = useState('');
@@ -27,31 +28,22 @@ const Signup = () => {
       }
    
       return (
-    <div>
-      <div>
-        <h1>Who's That Pokemon</h1>
-        <h2>Sign up for a free account</h2>
-        <p> Already have an account?{' '} 
-          <Link to='/'>
-            Sign in.
-          </Link>
-        </p>
-      </div>
+    <div className='directory'>
+      <div className="form">
+        <h2>Sign up for an account</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email Address</label>
           <input
             onChange={(e) => setEmail(e.target.value)}
             type='email'
+            placeholder="Enter your email"
+            
           />
-        </div>
-        <div>
-          <label>Password</label>
+      
           <input
             onChange={(e) => setPassword(e.target.value)}
             type='password'
+            placeholder="Enter your password"
           />
-        </div>
         {/* <div>
           <label>Password Confirm</label>
           <input
@@ -59,11 +51,17 @@ const Signup = () => {
             type='password'
           />
         </div> */}
-
-        <button>
+        <button className="formButton">
           Sign Up
         </button>
       </form>
+      <div className="directoryButton">
+
+          <div className="white">
+        Already have an account? <Link className="password" to="/login">Log In</Link>
+        </div>
+    </div>
+    </div>
     </div>
   );
 };

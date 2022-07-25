@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import { useRef } from "react";
 import { UserAuth } from "../contexts/AuthContexts";
 import { Link, useNavigate } from "react-router-dom";
+import './formstyling.css';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -27,30 +28,27 @@ const Login = () => {
      }
    
     return (
-   <div className='max-w-[700px] mx-auto my-16 p-4'>
-      <div>
-        <h2>Sign In</h2>
-      </div>
+   <div className='directory'>
+    <div className="form">
+        <h2>Log In</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label >Email Address</label>
-          <input onChange={(e) => setEmail(e.target.value)} type='email' />
-        </div>
-        <div>
-          <label>Password</label>
-          <input onChange={(e) => setPassword(e.target.value)}  type='password' />
-        </div>
-        <button>
+          <input onChange={(e) => setEmail(e.target.value)} type='email'
+           placeholder="Enter your email" />
+          <input onChange={(e) => setPassword(e.target.value)}  type='password'
+           placeholder="Enter your password" />
+        <button className="formButton">
           Sign In
         </button>
       </form>
-      <div>
-            <Link to="/forgotpassword">Forgot Password</Link>
+      <div className="directoryButton">
+        <div className="password">
+          <Link to="/forgotpassword">Forgot Password?</Link>
         </div>
-      <div>
-        Need an Account? <Link to="/signup">Sign Up</Link>
-      </div>
-   
+        <div className="white">
+        Need an Account? <Link className="password" to="/signup">Sign Up</Link>
+        </div>
+    </div>
+   </div>
 
     </div>
   )
