@@ -104,7 +104,7 @@ function Main() {
                   className="loadNewPokemon"onClick={() => {loadNewPokemon()}}
                   > 
                     <img src="images/pokeball.png" 
-                    alt="pokeball image" 
+                    alt="pokeball" 
                     className='pokeballImage'
                     />
                     <div 

@@ -5,8 +5,7 @@ import { useNavigate } from "react-router-dom";
 import './formstyling.css';
 
 const Dashboard = () => {
-    const [error, setError] = useState("");
-    const {currentUser, logout} = UserAuth();
+    const {logout} = UserAuth();
     const navigate = useNavigate();
     
     async function handleLogOut(){
@@ -15,7 +14,6 @@ const Dashboard = () => {
           await logout()
           navigate("/login")
         }catch{
-        setError('Failed to log out')
         }
     }
     return(
