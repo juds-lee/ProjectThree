@@ -9,11 +9,12 @@ const Dashboard = () => {
     const navigate = useNavigate();
     
     async function handleLogOut(){
-        setError("")
+       
         try{
           await logout()
           navigate("/login")
         }catch{
+       return;
         }
     }
     return(
