@@ -27,9 +27,13 @@ export const AuthContextProvider = ({ children }) => {
       return signOut(auth)
   }
 
-    function resetPassword(email) {
-        return sendPasswordResetEmail(auth, email)
-    }
+  const guestLogin = () => {
+     return signInWithEmailAndPassword(auth, 'jihid60521@5k2u.com', 'helloworld123')
+  }
+
+  function resetPassword(email) {
+      return sendPasswordResetEmail(auth, email)
+  }
 
 
   useEffect(() => {
@@ -43,7 +47,7 @@ export const AuthContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ createUser, user, logout, signIn, resetPassword }}>
+    <UserContext.Provider value={{ createUser, user, logout, signIn, resetPassword, guestLogin }}>
       {!loading && children}
     </UserContext.Provider>
   );

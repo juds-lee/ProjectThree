@@ -8,13 +8,13 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const {signIn} = UserAuth();
+    const { guestLogin} = UserAuth();
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     async function handleSubmit(e){
     e.preventDefault()
-    
     try {
       setError("")
       setLoading(true)
@@ -26,6 +26,14 @@ const Login = () => {
     }
      setLoading(false)
      }
+
+    const handleGuestLogin = (e) => {
+    e.preventDefault();
+      guestLogin()
+    .then(() => {
+      navigate('/');
+    })
+  }
    
     return (
    <div className='directory'>
@@ -40,6 +48,7 @@ const Login = () => {
         <button className="formButton">
           Log In
         </button>
+        <button className="guestButton" onClick={(e) => handleGuestLogin(e)}>Login as a guest</button>
       </form>
       <div className="directoryButton">
         <div className="password">

@@ -6,15 +6,15 @@ import app from "../firebase";
 
 const UserForm = ({ pokemon, userInput, setUserInput, correctArr, setCorrectArr, setIsColor, isColor, setHint, hint}) => {
     const {user} = UserAuth();
-    //let doubles = false;
     const [text, setText] = useState("");
     let displayedPokemon = pokemon.name
     
     const handleSubmit = (e) => {
         e.preventDefault()
         setUserInput("")
-        setUserInput(text)
-        if( text == displayedPokemon) {
+
+        setUserInput(text.toLowerCase())
+        if( text.toLowerCase() == displayedPokemon) {
             // create array to display in our pokedex
             // toggle to colored ver on correct answer
             setCorrectArr([pokemon, ...correctArr])
