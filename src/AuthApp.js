@@ -3,7 +3,6 @@ import PokemonApp from "./PokemonApp";
 import Login from "./AuthComponents/Login"
 import Forgotpassword from "./AuthComponents/Forgotpassword";
 import React from "react";
-import ProtectedRoute from './AuthComponents/PrivateRoute';
 import { AuthContextProvider } from "./contexts/AuthContexts";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PrivateRoute from "./AuthComponents/PrivateRoute";

@@ -39,7 +39,6 @@ const PokeDex = (props) => {
               className='pokedexImg'
               onClick={callPokeFromFirebase}
               />
-
               </button>}
               modal
               nested>
@@ -56,12 +55,8 @@ const PokeDex = (props) => {
                  
                   {pokemonInfo.map((i) => {
                     return (
-                      <div 
-                      className='pokemonContainer' key={i.id}
-                      >
-                     <div 
-                        className='pokemonSpritesBox' 
-                        >
+                      <div className='pokemonContainer' key={i.id}>
+                     <div className='pokemonSpritesBox'>
                         <img
                         className='sprites' 
                         src={i.pokemon.pokemon.sprites.front_default} 
