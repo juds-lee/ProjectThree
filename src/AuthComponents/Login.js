@@ -48,7 +48,7 @@ const Login = () => {
         <button className="formButton">
           Log In
         </button>
-        <button className="guestButton" onClick={(e) => handleGuestLogin(e)}>Login as a guest</button>
+        <button className="guestButton" onClick={(e) => handleGuestLogin(e)}>Log in as a guest</button>
       </form>
       <div className="directoryButton">
         <div className="password">
