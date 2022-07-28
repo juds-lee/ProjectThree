@@ -12,16 +12,18 @@ const UserForm = ({ pokemon, userInput, setUserInput, correctArr, setCorrectArr,
     const handleSubmit = (e) => {
         e.preventDefault()
         setUserInput("")
-
+        
         setUserInput(text.toLowerCase())
         if( text.toLowerCase() == displayedPokemon) {
             // create array to display in our pokedex
             // toggle to colored ver on correct answer
             setCorrectArr([pokemon, ...correctArr])
-            setIsColor(!isColor)
-            
+            setIsColor(!isColor)  
+            // connect to firebase 
             const database = getDatabase(app);
+            // create data pathway for each user
             const newPokemonKey = push(child(ref(database), `users/${user?.uid}/pokemon`)).key;
+            // save pokemon to each users individual path
             set(ref(database, `users/${user?.uid}/${newPokemonKey}`), {pokemon});
         }
         setText("") 

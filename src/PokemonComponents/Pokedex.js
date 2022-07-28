@@ -10,7 +10,8 @@ const PokeDex = (props) => {
   const [pokemonInfo, setPokemonInfo] = useState([]);
 
   const callPokeFromFirebase = () => {
-    // this will grab the pokemon stored into the users firebase in order to display it when the modal is clicked
+    // this will grab the pokemon stored into the users database in order to
+    //display it when the modal is clicked
     const database = getDatabase(app);
     const dbRef = ref(database, `users/${user?.uid}`);
     onValue(dbRef, (response) => {
@@ -21,6 +22,7 @@ const PokeDex = (props) => {
         pokemonArray.push({key: key, 
           pokemon: data[key]});
       }
+      // save in a state to access outside of this function
       setPokemonInfo(pokemonArray);
     })
   }
@@ -32,7 +34,7 @@ const PokeDex = (props) => {
           <Popup 
               trigger={
               <button 
-              className="button pokedex">  
+              className="pdButton pokedex">  
               <img 
               src="/images/pokedex.jpeg" 
               alt="image of a pokedex" 

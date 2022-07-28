@@ -42,9 +42,12 @@ const Login = () => {
         {error && <div className='failed'>{error}</div>}
       <form onSubmit={handleSubmit}>
           <input onChange={(e) => setEmail(e.target.value)} type='email'
-           placeholder="Enter your email" />
-          <input onChange={(e) => setPassword(e.target.value)}  type='password'
-           placeholder="Enter your password" />
+                  placeholder="Enter your email"
+                  className="authInput" />
+          <input onChange={(e) => setPassword(e.target.value)}  
+                  type='password'
+                  placeholder="Enter your password" 
+                  authInput/>
         <button className="formButton">
           Log In
         </button>

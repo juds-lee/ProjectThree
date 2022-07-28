@@ -9,12 +9,12 @@ const DisplayResults = ({userInput, displayedPokemon} ) => {
         return(
         <div>Correct!</div>
         )
-    }else if (userInput && userInput !== displayedPokemon){
+    } else if (userInput && userInput !== displayedPokemon){
         return(
           <div>Try Again</div>
         )
         
     }
-}
+};
 
 export default DisplayResults;

@@ -8,9 +8,9 @@ import Footer from './PokemonComponents/Footer';
 import Dashboard from './AuthComponents/Dashboard';
 
 function Main() {
+  const randomPokemonID = Math.ceil(Math.random() * 300);
 // setting the states
   const [pokemon, setPokemon] = useState([]);
-  const randomPokemonID = Math.ceil(Math.random() * 300);
   const [userInput, setUserInput] = useState('');
   const [correctArr, setCorrectArr] = useState([]);
   const [abilitiesArr, setAbilitiesArr] = useState([]);

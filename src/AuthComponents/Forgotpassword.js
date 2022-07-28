@@ -32,9 +32,11 @@ const Forgotpassword = () => {
           {error && <div className="failed">{error}</div>}
           {message && <div className="success">{message}</div>}
          <form onSubmit={handleSubmit}>
-          <input onChange={(e) => setEmail(e.target.value)} type='email'
+          <input 
+          onChange={(e) => setEmail(e.target.value)} 
+          type='email'
           placeholder="Enter your email" />
-        <button className="formButton"> 
+        <button className="formButton forgotPassword"> 
           Reset Password
         </button>
       </form>

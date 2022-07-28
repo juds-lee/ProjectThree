@@ -117,5 +117,12 @@ form {
 .failed, .success{
     color: white;
     margin-top: .7rem;
-   
+}
+
+input, textarea {
+    padding-left: .7rem;
+}
+
+.forgotPassword, .signup {
+    margin-bottom: .7rem;
 }
