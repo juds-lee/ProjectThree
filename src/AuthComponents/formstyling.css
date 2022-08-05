@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(/public/images/background.jpg);
+    background-image: url(/public/images/background.webp);
     background-position: 3%;
 }
 

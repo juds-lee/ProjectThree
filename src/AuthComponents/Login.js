@@ -40,19 +40,23 @@ const Login = () => {
     <div className="form">
         <h2>Log In</h2>
         {error && <div className='failed'>{error}</div>}
+        
       <form onSubmit={handleSubmit}>
-          <input onChange={(e) => setEmail(e.target.value)} type='email'
-                  placeholder="Enter your email"
-                  className="authInput" />
-          <input onChange={(e) => setPassword(e.target.value)}  
-                  type='password'
-                  placeholder="Enter your password" 
-                  authInput/>
+          <input 
+          onChange={(e) => setEmail(e.target.value)} type='email'
+          placeholder="Enter your email"
+          className="authInput" />
+          <input 
+          onChange={(e) => setPassword(e.target.value)}  
+          type='password'
+          placeholder="Enter your password" 
+          authInput/>
         <button className="formButton">
           Log In
         </button>
         <button className="guestButton" onClick={(e) => handleGuestLogin(e)}>Guest Log In</button>
       </form>
+
       <div className="directoryButton">
         <div className="password">
           <Link to="/forgotpassword">Forgot Password?</Link>

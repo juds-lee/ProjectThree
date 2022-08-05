@@ -24,7 +24,7 @@ function Main() {
   const handleThemeSwitch = (color) => {
     setTheme(color)
   }
-  // function to retrieve Api 
+  // function to retrieve Api data
   function loadNewPokemon() {
       axios({
         url: `https://pokeapi.co/api/v2/pokemon/${randomPokemonID}`,
